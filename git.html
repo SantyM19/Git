@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="css/Style.css">
+</head>
+<body>
+    <div class="menu">
+        <div class="head" > 
+            <i class="fab fa-git fa-lg logo"></i>
+        </div>
+        <input type="checkbox" id="hi">
+           <label class="menui" for="hi">
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+        </label>
+        <nav class="navega" id="navega">
+            <div class="item" > 
+                <a class="a" href="#git">HOME</a> 
+            </div>
+            <div class="item" > 
+                <a class="a" href="#Begining">BEGINING</a> 
+            </div>
+            <div class="item" > 
+                <a class="a" href="#WebRep">WEBREP</a>
+            </div>
+            <div class="item" > 
+                <a class="a" href="#Branches">BRANCHES</a> 
+            </div>
+            <div class="item" > 
+                <a class="a" href="#Errors">ERRORS</a> 
+            </div>
+        </nav>
+    </div>
+    <div class="content git" id="git">
+        <div class="git1">
+            <img src="img/imggit.png" alt="image about Git">
+        </div>
+        <div class="git2">
+            <h3>Control de versiones GIT</h3>
+            <p>
+                Git es un sistema de control de versiones distribuido gratuito y de código abierto diseñado para manejar todo, desde proyectos pequeños hasta muy grandes, con velocidad y eficiencia.
+                Git es fácil de aprender y tiene una huella pequeña con un rendimiento increíblemente rápido . Supera las herramientas de SCM como Subversion, CVS, Perforce y ClearCase con características como ramificación local barata , áreas de preparación convenientes y múltiples flujos de trabajo .
+            </p>
+            <a href="https://git-scm.com/">Pagina principal de git</a>
+            <br>
+            <a href="https://git-scm.com/doc">Documentacion git</a>
+        </div>
+        <div class="gitt" id="Begining">
+            <h4>Empezando con git</h4>
+            <h5>Primer Repositorio</h5>
+            <p>Crearemos el primer repositorio con git, <br>Pasando por el Working Area, que es nuestro directorio de archivos. <br>Luego por el Stage Area, donde git realiza una especie de seguimiento a los datos o archivos. <br>Al final crearemos el repositorio.</p>
+            <ol>
+                <li>Instalar git desde su pagina principal</li>
+                <a href="https://git-scm.com/">Descarga git</a>
+                <li>verificar version de git en la cmd</li>
+                <code>git version</code>
+                <li>Configurar git con nuestro nombre de autor</li>
+                <code>git config --global user.name "Author Name" </code>
+                <li>Configurar git con nuestro correo</li>
+                <code>git config --global user.email "Author-Email@...." </code>
+                <li>Verificar nuestras configuraciones</li>
+                <code>git config --list</code>
+                <li>mira que archivos tienes dentro de la carpeta</li>
+                <code>ls</code>
+                <li>Con el anterior comando podemos ver los archivos y carpetas, con el siguiente tenemos mas informacion sobre el directorio</li>
+                <code>ll</code>
+                <li>Utiliza el siguiente comando acompañado de un archivo dentro de tu directorio para ver el codigo, en mi caso "index.html"</li>
+                <code>cat index.html</code>
+                <li>Crea un repositorio dentro de tu directorio</li>
+                <code>git init</code>
+                <li>Comando para ver que cambios tiene el directorio, verificando asi que se creo un archivo .git, sera el de lectura para nuestros cambis en el repositorio</li>
+                <code>ls -alh</code>
+                <li>Vemos el estatus de nuestros archivos</li>
+                <code>git status</code>
+                <p>Nos informa que estamos en la rama principal "Branch Master" <br>
+                    Que no hemos creado ningun Commit "comentario"<br>Y que tenemos archivos sin seguimiento por git"nuestros archivos del directorio"<br>Ademas observamos que se encuentra nuestro gitignore, pero no unestro txt, lo que significa que si funciono
+                </p>
+                <li>Agregar nuestros archivos al Staging Area</li>
+                <code>git add -A archivo.extencion</code>
+                <br>
+                <code>git add .</code>
+                <li>Ver estatus para ver si ahora si se dio el seguimiento de nuestros archivos por git</li>
+                <code>git status</code>
+                <li>Agregamos Commit a nuestros archivos</li>
+                <code>git commit -m "primeros archivos"</code>
+                <li>Si realizamos un status podremos fijarnos que ya no estan los archivos, dado que ahora estan en el repositorio</li>
+                <code>git status</code>
+                <li>Con ll podemos observas que los archivos estan ene l directorio</li>
+                <code>ll</code>
+                <li>Con el siguiente comando podemos ver el historial del repositorio</li>
+                <code>git log</code>
+            </ol>
+        </div>
+        <div class="gitt" id="WebRep">
+            <h5>Trabajando en un repositorio ya creado</h5>
+            <br>
+            <img src="img/imggithub.jpg" alt="Image abaut GitHub">
+            <p>GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de código fuente de programas de ordenador. El software que opera GitHub fue escrito en Ruby on Rails <br><br>
+            vamos a clonar un repositorio de github, para trabajar en el</p>
+            <p>En este caso traeremos de github un repositorio, para trabajar en el , realizar cambios y luego subirlo al mismo repositorio web de donde se trajo.</p>
+            <ol>
+                <li>En este caso traeremos un repositorio de github, ten en cuenta que usuario es tu usario y repositorio es el nombre de tu repo en git</li>
+                <code>git clone https://github.com/usuario/repositorio.git</code>
+                <li>Tenemos un repositorio nuevo, entremos a el para verlo , recuerda que repositorio es el nombre del repo que tragist</li>
+                <code>cd repositorio</code>
+                <li>Vemos el historial del respositorio</li>
+                <code>git log</code>
+                <li>Vemos que archivos contiene</li>
+                <code>ll</code>
+                <li>Modificamos un archivo</li>
+                <li>Veremos la modificacion en git</li>
+                <code>git status</code>
+                <p>Veremos que el archivo ha sido modificado</p>
+                <li>utilizaremos un comando para ver las diferencias entre la primer version del archivo y la segunda que acabamos de ejecutar</li>
+                <code>git diff</code>
+                <li>Agregarenos el archivo o archivos modificados al stage Area</li>
+                <code>git add archivo.extencion</code>
+                <br>
+                <code>git add .</code>
+                <li>Veremos los cambios para el estage aera</li>
+                <code>git status</code>
+                <li>Agregamos el Commit "comentario"</li>
+                <code>git commit -m "cambios que se efectuaron"</code>
+                <li>Observamos el historial del repositorio</li>
+                <code>git log</code>
+                <li>Subimos nuestra ultima version al repositorio publico</li>
+                <code>git push origin master</code>
+                <li>Nota: con el siguiente comando traemos la ultima version</li>
+                <code>git pull origin master</code>
+            </ol>
+            <h5 id="Branches">Trabajando en equipo, Creando ramificaciones</h5>
+            <p>Crearemos una ramificacion para trabajar en paralelo sobre el repositoio original, con la finalidad de no afectar los archivo originales. <br>De este modo podremos ejectar pruebas sobre la nueva ramificacion y unirlas a al original asta estar seguros.</p>
+            <ol>
+                <li>Creamos la ramificacion con su nombre</li>
+                <code>git branch CambiosHoy</code>
+                <li>Nos dirijimos a al lugar de trabajo</li>
+                <code>git checkout CambiosHoy</code>
+                <p>Nota: Con este comando tambien puedes navegar entre commits</p>
+                <li>Vemos la rama</li>
+                <code>git status</code>
+                <li>vemos los archivos que podemos modificar</li>
+                <code>ll</code>
+                <li>Con el siguiente comando podemos observar todas las branch que tenemos en nuestro repositorio</li>
+                <code>git branch</code>
+                <li>Modificamos el archivo o los archivos</li>
+                <li>Le damos seguimiento al archivo con git</li>
+                <code>git add -A</code>
+                <li>Agremgamso un commit</li>
+                <code>git commit -m "Modificando valores del menu amburguesa"</code>
+                <li>Agregamos nuestro codigo al repositorio de la branch</li>
+                <code>git push -u origin CambiosHoy</code>
+                <li>Vemos todas las branch locales y globales</li>
+                <code>git branch -a</code>
+                <li>Necesitamos unir los cambios de la branch en la master, primero vamos a la  master</li>
+                <code>git checkout master</code>
+                <li>Nos actualizamos a la ultima version</li>
+                <code>git pull origin master</code>
+                <li>Traemos nuestra Branch</li>
+                <code>git branch --merged</code>
+                <li>Cargamos los cambios en el master</li>
+                <code>git merge CambiosHoy</code>
+                <li>Por ultimo cargamos los cambios en el repositorio publico, WEB</li>
+                <code>git push origin master</code>
+                <li>para eliminar las branch del publico WEB y de mi repositorio</li>
+                <code>git push origin --delete CambiosHoy</code>
+                <br>
+                <code>git branch -d CambiosHoy</code>
+            </ol>
+        </div>
+        <div id="Errors">
+            <h5>Arreglando errores sobre la marcha</h5>
+            <p>Que sucede si cometimos un error con la Branch Master?<br>Si queremos realizar algun cambio y regresar entre versiones</p>
+            <ol>
+                <li>Iniciamos desde el mismo repositorio <br>
+                Vemos los arcivos contenidos en el directorio <br>
+                Vemos el stage Git para observar si git le hace seguimiento a algun archivo</li>
+                <code>ll</code>
+                <br>
+                <code>git status</code>
+                <li>Agregamos el archivo o los archivos modificados al Stage y le agregamos su respectivo Commit</li>
+                <code>git add index.html</code>
+                <br>
+                <code>git commit -m "el mismo de siempre"</code>
+                <li>Vemos el historial</li>
+                <code>git log</code>
+                <li>Queremos modificar otro archivo, lo modificamos, vemos los cambios</li>
+                <code>git status</code>
+                <li>Nos fijamos que realmente no queremos ese cambio en el Working Directory, vamos a regresar a su version anterior y verificamos con status</li>
+                <code>git status</code>
+                <li>Decidimos aplicar cambio en otro archivo</li>
+                <br>
+                <code>git status</code>
+                <li>Agregamos el archivo al Stage Area y verificamos el cambio</li>
+                <code>git add css/Style.css</code>
+                <br>
+                <code>git status</code>
+                <li>El siguiente paso es arreglar el anterior commit</li>
+                <code>git commit --amend</code>
+                <li>Observamos que el commit se sobre escribio</li>
+                <code>git log</code>
+                <li>Queremos ver los archivos modificados en cada commit</li>
+                <code>git log --stat</code>
+                <li>Supongamos que nos equivocamos, e hicimos los cambios en la Branch Master, y nosotros queriamos trabajar en una rama, por lo cual editamos la rama principal y esta no debia ser editada, lo solucionaremos copiando los cambios efectuados en la rama principal, para ello nos pasamos a la branch secundaria</li>
+                <code>git checkout feature</code>
+                <li>Vemos su id en los commits, y podemos notar que no se efectuo el cambio de la Branch Master en esta Branch</li>
+                <code>git log</code>
+                <li>Traemos nuestros cambios de la branch master</li>
+                <code>git cherry-pick a983rf6t</code>
+                <p>No es necesario copiar el id completo del commit</p>
+                <li>Observamos los cambios</li>
+                <code>git log</code>
+                <li>El siguiente paso es eliminar nuestro error de la Branch Master, para ello nos ubicamos alli</li>
+                <code>git checkout master</code>
+                <li>Verificamos el Id del commit que deseamos eliminar</li>
+                <code>git log</code>
+                <li>
+                    Reseteamos la Branch Master. <br>
+                    Existen tres modos de reset
+                </li>
+                <ul>
+                    <li>Soft <br>Al utilizarlo podremos observar que se elimina el commit pero conservamos los archivos en el Stage Area</li>
+                    <code>git reset --soft a983rf6t</code>
+                    <br>
+                    <code>git log</code>
+                    <br>
+                    <code>git status</code>
+                    <li>Mix <br> Es el modo standar, Al utilizarlo tendremos los archivos en el Working Directory y el commit eliminado</li>
+                    <code>git reset a983rf6t</code>
+                    <br>
+                    <code>git log</code>
+                    <br>
+                    <code>git status</code>
+                    <li>Hard <br>Este caso se utiliza para eliminar todos los archivos del ultimo commit por completo, no queddan en ningun Area</li>
+                    <code>git reset --hard a983rf6t</code>
+                    <br>
+                    <code>git log</code>
+                    <br>
+                    <code>git status</code>
+                    <li>En el caso aislado de cometer un error con el reset hard, tienes 30 dias para recuperar dichos archivos con el Garbage de git</li>
+                    <code>git reflog</code>
+                    <li>Puedes ver las diferencias entre commits con sus Id</li>
+                    <code>git diff a983rf6t a9yj7f8t</code>
+                    <li>Para recuperar el commit solo utiliza su id</li>
+                    <code>git reset a983rf6t</code>
+                </ul>
+            </ol>
+        </div>
+        <div id="SSH">
+            <h5>SECURE SHELL</h5>
+            <p>SSH es el nombre de un protocolo y del programa que lo implementa cuya principal función es el acceso remoto a un servidor por medio de un canal seguro en el que toda la información está cifrada</p>
+            <ol>
+                <li>Te ubicas en el directorio en el que vas a guardar tu llave SHH, desde la terminal, normalmente es en el Home, a continuacion el comando para dirigirte al home desde la terminal</li>
+                <code>cd ~</code>
+                <p>o</p>
+                <code>cd</code>
+                <p>Nota: el atributo <code>~</code> guarda la direccion del home, por otro lado recuerda la ruta donde guardaste tu ssh.</p>
+                <br>
+                <li>Comando para Generar tus llaves privadas, Recuerda que es muy buena idea Crearlas y protegerlas con una capa mas de defensa, en este caso contraseña.</li>
+                <code>ssh-keygen -t rsa -b 4096 -C "tu@email.com"</code>
+                <br>
+                <li>Encender el "servidor" de llaves SSH de tu computadora:</li>
+                <code>eval $(ssh-agent -s)</code>
+                <br>
+                <li>Añadir tu llave SSH a este "servidor":</li>
+                <code>ssh-add ruta-donde-guardaste-tu-llave-privada</code>
+                <p>o, si lo hiciste desde tu home <code>~</code></p>
+                <code>ssh-add ~/.ssh/ide_rsa</code>
+                <br>
+                <li>Ahora te diriges a tu repositorio GitHub</li>
+                <ul>
+                    <li>Vas a la opcion SETTINGS</li>
+                    <li>Luego a SSH and GPG Keys</li>
+                    <li>Alli le das en la opcion New SSH key</li>
+                    <li>Asignas el titulo de tu laptop, o nombre de la llave</li>
+                    <li>En Key pegas todo el codigo que genero tu llave publica, que pertenece al archivo id_rsa.pub</li>
+                    <li>Le das añadir</li>
+                </ul>
+                <p>Listo finalizaste</p>
+                <li>Ahora ya podras trabajar con SSH, primero dirigete a uno de tus repositorios en github, e intenta copiar la url para clonar, pero esta vez con la opcion SSH</li>
+                <li>Luego dirigete a tu repocitorio local y mira la URL del origin</li>
+                <code>git remote -v</code>
+                <br>
+                <li>Cambiaremos esta url A la designada por SSH</li>
+                <code>git remote set-url origin url-ssh-del-repositorio-en-github</code>
+                <br>
+                <li>Listo ya puedes trabajar los comandos <code>pull</code> y <code>push</code> normalmente, con seguridad</li>
+                <code></code>
+                <br>
+            </ol>
+        </div>
+        <div id="MoreCommands">
+            <h5>Mas Comandos We</h5>
+            <p>Ten en cuenta estos comandos:</p>
+            <ol>
+                <li>Para ver mejor los cambios realizados en los multiples commits, mas info.</li>
+                <code>git log --stat</code>
+                <br>
+                <li>Para realizar un commit sin necesidad de agregar los cambios al Staging Area</li>
+                <code>git commit -am "Changes Here!"</code>
+                <br>
+                <li>Con este comando verificas si tienes alguna URL guardada para tu repo en la web</li>
+                <code>git remote</code>
+                <br>
+                <li>Con este comando podras observar la URL guardada</li>
+                <code>git remote -v</code>
+                <br>
+                <li>Para ver como tengo configurado mi git</li>
+                <code>git config -l</code>
+                <br>
+                <li>Para Ver el arbol de branches</li>
+                <code>git log --all --graph</code>
+                <br>
+                <li>Para ver el arbol aun mas comprimido</li>
+                <code>git log --all --graph --decorate --oneline</code>
+                <br>
+                <li>Asignandole un Alias a nuestro comando largo</li>
+                <code>alias name-alias = "git log --all --graph --decorate --oneline"</code>
+                <p>Ejemplo</p>
+                <code>alias arbolito = "git log --all --graph --decorate --oneline"</code>
+                <br>
+                <li>Llamando nuestro alias</li>
+                <code>arbolito</code>
+                <br>
+                <li>Crear un nuevo tag y asignarlo a un commit:</li>
+                <code>git tag -a nombre-del-tag id-del-commit</code>
+                <br>
+                <li>Borrar un tag en el repositorio local:</li>
+                <code>git tag -d nombre-del-tag</code>
+                <br>
+                <li>Listar los tags de nuestro repositorio local:</li>
+                <code>git tag o git show-ref --tags</code>
+                <br>
+                <li>Borrar un tag en el repositorio local:</li>
+                <code>git tag -d nombre-del-tag.</code>
+                <br>
+                <li>Publicar un tag en el repositorio remoto:</li>
+                <code>git push origin --tags</code>
+                <br>
+                <li>Borrar un tag del repositorio remoto:</li>
+                <code>git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag</code>
+                <br>
+                <li>Comandos para ver cuales ramas existen y cual ha sido su historia</li>
+                <code>git show-branch</code>
+                <br>
+                <li>Nos muestra aun mas informacion que el anterior</li>
+                <code>git show-branch --all</code>
+                <br>
+                <li>ver el arbol visualmente</li>
+                <code>gitk</code>
+                <br>
+
+
+ 
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
